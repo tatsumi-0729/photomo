@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Button from '../components/Button';
 
 export default function MessageScreen() {
@@ -7,7 +7,7 @@ export default function MessageScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Message</Text>
       <View style={styles.separator} />
-      <Button text="message button"/>
+      <Button text="message button" />
     </View>
   );
 }
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fffef9'
+    backgroundColor: '#fffef9',
   },
   title: {
     fontSize: 20,
