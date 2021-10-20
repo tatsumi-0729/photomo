@@ -16,19 +16,31 @@ const App = () => {
   return (
   <NavigationContainer>
     <Tab.Navigator>
-      <Tab.Screen name="camera" component={CameraScreen} />
-      <Tab.Screen name="message" component={MessageScreen} />
-      <Tab.Screen name="mypage" component={MypageScreen} />
+      <Tab.Screen name="camera" component={CameraScreen} 
+              options={{
+                title: '',
+                tabBarIcon: ({ color }) => <TabBarIcon name="camera" color={color} />,
+              }} />
+      <Tab.Screen name="message" component={MessageScreen}
+              options={{
+                title: '',
+                tabBarIcon: ({ color }) => <TabBarIcon name="envelope" color={color} />,
+              }} />
+      <Tab.Screen name="mypage" component={MypageScreen} 
+              options={{
+                title: '',
+                tabBarIcon: ({ color }) => <TabBarIcon name="user-circle" color={color} />,
+              }} />
     </Tab.Navigator>
   </NavigationContainer>
   );
 };
 
 function TabBarIcon(props: {
-  name: string;
+  name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <FontAwesome size={35} style={{ marginBottom: -25 }} {...props} />;
+  return <FontAwesome size={30} style={{ marginBottom: -25 }} {...props} />;
 }
 
 export default App;
