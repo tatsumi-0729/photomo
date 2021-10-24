@@ -15,11 +15,6 @@ export default function MypageScreen() {
     {path: ''},
     {path: ''},
     {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
   ];
   return (
     <View style={styles.messageWrap}>
