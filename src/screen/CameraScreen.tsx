@@ -7,7 +7,7 @@ export default function CameraScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Camera</Text>
       <View style={styles.separator} />
-      <Button text="camera button" />
+      <Button text="検索" />
     </View>
   );
 }

@@ -17,28 +17,28 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          name="camera"
+          name=" "
           component={CameraScreen}
           options={{
-            title: '',
+            headerTitle: 'さがす',
             tabBarIcon: ({color}) => <TabBarIcon name="camera" color={color} />,
           }}
         />
         <Tab.Screen
-          name="message"
+          name="  "
           component={MessageScreen}
           options={{
-            title: '',
+            headerTitle: 'メッセージ',
             tabBarIcon: ({color}) => (
               <TabBarIcon name="envelope" color={color} />
             ),
           }}
         />
         <Tab.Screen
-          name="mypage"
+          name="   "
           component={MypageScreen}
           options={{
-            title: '',
+            headerTitle: 'マイページ',
             tabBarIcon: ({color}) => (
               <TabBarIcon name="user-circle" color={color} />
             ),
