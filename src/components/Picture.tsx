@@ -4,11 +4,11 @@ import {Card} from 'react-native-paper';
 
 const ITEM_WIDTH = Dimensions.get('window').width;
 
-export default function MypageScreen({picturePath}: {picturePath: string}) {
+export default function MypageScreen({picturePath}: {picturePath: any}) {
   return (
     <View>
       <Card style={styles.picture}>
-        <Card.Cover source={require('../../assets/images/90_main.jpeg')} />
+        <Card.Cover source={picturePath} />
       </Card>
     </View>
   );

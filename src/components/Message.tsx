@@ -9,13 +9,14 @@ export default function Message() {
     <View style={styles.container}>
       <Avatar
         rounded
-        size={60}
+        size={55}
         title="TT"
         source={{
           uri: '../../assets/images/Eawok9YU0AIt-fv.jpeg',
         }}
       />
       <View style={styles.messageContainer}>
+        <Text style={styles.name}>tatsumi</Text>
         <Text style={styles.message}>
           メッセージのテストです。メッセージのテストです。
           メッセージのテストです。メッセージのテストです。
@@ -27,20 +28,27 @@ export default function Message() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15,
+    width: WIDTH,
+    padding: 10,
     backgroundColor: '#fffef9',
     borderWidth: 0.4,
     borderColor: '#dcdcdc',
   },
   messageContainer: {
-    width: WIDTH,
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  name: {
+    width: '85%',
+    fontSize: 15,
   },
   message: {
-    margin: 10,
-    width: '75%',
-    fontSize: 15,
+    margin: 8,
+    width: '85%',
+    fontSize: 11,
   },
 });
