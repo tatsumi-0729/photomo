@@ -121,13 +121,14 @@ const styles = StyleSheet.create({
   textArea: {
     height: 70,
     width: '85%',
+    marginTop: 10,
     textAlignVertical: 'top',
   },
   pictureWrap: {
     flex: 1,
     flexWrap: 'wrap',
     width: WIDTH,
-    margin: 10,
+    marginTop: 20,
     backgroundColor: '#ecf0f1',
   },
 });
