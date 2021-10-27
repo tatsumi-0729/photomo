@@ -13,7 +13,6 @@ import Picture from '../components/Picture';
 import Chip from '../components/Chip';
 
 const WIDTH = Dimensions.get('window').width;
-const HEIGHT = Dimensions.get('window').height;
 
 export default function MypageScreen() {
   const picturePathList = [
@@ -82,7 +81,9 @@ export default function MypageScreen() {
           {/* 写真一覧 */}
           <View style={styles.pictureWrap}>
             {picturePathList.map((item: any, i: number) => (
-              <Picture picturePath={item.path} />
+              <View style={styles.picture}>
+                <Picture picturePath={item.path} />
+              </View>
             ))}
           </View>
         </View>
@@ -95,7 +96,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     width: WIDTH,
-    height: HEIGHT,
     backgroundColor: '#fffef9',
   },
   avatarNameWrap: {
@@ -126,9 +126,15 @@ const styles = StyleSheet.create({
   },
   pictureWrap: {
     flex: 1,
+    flexDirection: 'row',
     flexWrap: 'wrap',
     width: WIDTH,
     marginTop: 20,
     backgroundColor: '#ecf0f1',
+  },
+  picture: {
+    width: WIDTH / 2,
+    borderWidth: 0.4,
+    borderColor: 'black',
   },
 });

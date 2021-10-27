@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions, View} from 'react-native';
 import {Card} from 'react-native-paper';
 
 const ITEM_WIDTH = Dimensions.get('window').width;
@@ -7,17 +7,9 @@ const ITEM_WIDTH = Dimensions.get('window').width;
 export default function MypageScreen({picturePath}: {picturePath: any}) {
   return (
     <View>
-      <Card style={styles.picture}>
+      <Card>
         <Card.Cover source={picturePath} />
       </Card>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  picture: {
-    width: ITEM_WIDTH / 2,
-    borderWidth: 0.4,
-    borderColor: 'black',
-  },
-});
