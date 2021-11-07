@@ -4,7 +4,7 @@ import Message from '../components/Message';
 
 const ITEM_WIDTH = Dimensions.get('window').width;
 
-export default function MypageScreen() {
+export default function Messagecreen() {
   const messageList = [
     {path: ''},
     {path: ''},
@@ -35,8 +35,7 @@ export default function MypageScreen() {
 const styles = StyleSheet.create({
   messageWrap: {
     flex: 1,
-    justifyContent: 'flex-start',
-    flexWrap: 'wrap',
+    justifyContent: 'center',
     backgroundColor: '#ecf0f1',
     width: ITEM_WIDTH,
   },

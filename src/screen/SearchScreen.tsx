@@ -2,10 +2,10 @@ import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Button from '../components/Button';
 
-export default function HomeScreen() {
+export default function SearchScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Camera</Text>
+      <Text style={styles.title}>SearchScreen</Text>
       <View style={styles.separator} />
       <Button text="検索" />
     </View>
