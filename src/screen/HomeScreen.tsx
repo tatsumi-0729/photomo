@@ -1,31 +1,45 @@
 import * as React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Button from '../components/Button';
+import {Dimensions, StyleSheet} from 'react-native';
+import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
+
+import SearchModelScreen from './SearchModelScreen';
+import SearchCameraScreen from './SearchCameraScreen';
 
 export default function HomeScreen() {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    {key: 'first', title: 'モデル'},
+    {key: 'second', title: 'カメラマン'},
+  ]);
+
+  const renderScene = SceneMap({
+    first: SearchModelScreen,
+    second: SearchCameraScreen,
+  });
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Camera</Text>
-      <View style={styles.separator} />
-      <Button text="検索" />
-    </View>
+    <TabView
+      lazy
+      navigationState={{index, routes}}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      renderTabBar={props => (
+        <TabBar
+          {...props}
+          style={styles.tab}
+          labelStyle={{color: '#fff'}}
+          indicatorStyle={{backgroundColor: '#71dfaf'}} //heightを100%にすれば背景色となる
+          activeColor={'#000'}
+          inactiveColor={'#aaa'}
+        />
+      )}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fffef9',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  tab: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('window').width,
   },
 });
