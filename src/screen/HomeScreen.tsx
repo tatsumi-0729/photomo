@@ -5,7 +5,7 @@ import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 import SearchModelScreen from './SearchModelScreen';
 import SearchCameraScreen from './SearchCameraScreen';
 
-export default function HomeScreen() {
+export default function HomeScreen(navigation: any) {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {key: 'model', title: 'モデル'},

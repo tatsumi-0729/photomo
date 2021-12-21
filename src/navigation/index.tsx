@@ -1,7 +1,7 @@
 import * as React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Pressable} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -9,6 +9,7 @@ import HomeScreen from '../screen/HomeScreen';
 import SearchScreen from '../screen/SearchScreen';
 import MessageScreen from '../screen/MessageScreen';
 import MypageScreen from '../screen/MypageScreen';
+import UserDetailScreen from '../screen/UserDetailScreen';
 
 export default function Navigation() {
   return (
@@ -18,7 +19,7 @@ export default function Navigation() {
   );
 }
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function RootNavigator() {
   return (
@@ -26,7 +27,12 @@ function RootNavigator() {
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
-        options={{headerShown: false}}
+        options={{headerShown: false, headerTitle: ' '}}
+      />
+      <Stack.Screen
+        name="UserDetail"
+        component={UserDetailScreen}
+        options={{headerTitle: ' '}}
       />
       <Stack.Group screenOptions={{presentation: 'modal'}}>
         <Stack.Screen name="検索" component={SearchScreen} />

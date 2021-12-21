@@ -1,23 +1,24 @@
 import * as React from 'react';
-import {Text} from 'react-native';
 import {Card, Paragraph} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../Types';
 
-import UserDetailScreen from '../screen/UserDetailScreen';
+type UserDetailScreenProp = StackNavigationProp<
+  RootStackParamList,
+  'UserDetail'
+>;
 
-export default function MypageScreen({user}: {user: any}) {
-  const picturePathList = null;
-
+export default function User({user}: {user: any}) {
+  const navigation = useNavigation<UserDetailScreenProp>();
   return (
-    <Card>
+    <Card onPress={() => navigation.navigate('UserDetail', user.id)}>
       <Card.Cover source={user.path} />
       <Card.Content>
         <Paragraph>
           {user.name} : {user.prefecture}
         </Paragraph>
       </Card.Content>
-      <Card.Actions>
-        <Text>test</Text>
-      </Card.Actions>
     </Card>
   );
 }

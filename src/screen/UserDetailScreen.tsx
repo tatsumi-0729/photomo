@@ -12,7 +12,8 @@ import Picture from '../components/Picture';
 
 const WIDTH = Dimensions.get('window').width;
 
-export default function UserDetailScreen(userId: number) {
+export default function UserDetailScreen({route}: {route: any}) {
+  const userId = route.params;
   const picturePathList = [
     {path: require('../../assets/images/90_main.jpeg')},
     {
@@ -47,7 +48,7 @@ export default function UserDetailScreen(userId: number) {
 
           <View style={styles.nameWrap}>
             {/* 名前 */}
-            <Text style={styles.name}>tatsumi</Text>
+            <Text style={styles.name}>{userId}</Text>
             <Text style={styles.id}>@tatsumi_engineer</Text>
           </View>
         </View>
