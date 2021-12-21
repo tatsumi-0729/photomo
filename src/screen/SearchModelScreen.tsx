@@ -1,14 +1,22 @@
 import * as React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Button from '../components/Button';
+import {StyleSheet, Dimensions, ScrollView, View} from 'react-native';
+import User from '../components/User';
 
-export default function SearchModelScreen() {
+const WIDTH = Dimensions.get('window').width;
+
+export default function SearchModelScreen({userList}: {userList: any}) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>モデル</Text>
-      <View style={styles.separator} />
-      <Button text="検索" />
-    </View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.container}>
+        <View style={styles.pictureWrap}>
+          {userList.map((user: any) => (
+            <View style={styles.picture}>
+              <User user={user} />
+            </View>
+          ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -23,9 +31,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  pictureWrap: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 4,
+    marginBottom: 4,
+    width: WIDTH,
+    backgroundColor: '#fffef9',
+  },
+  picture: {
+    width: WIDTH / 2,
+    padding: 4,
   },
 });

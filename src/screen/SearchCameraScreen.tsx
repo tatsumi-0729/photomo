@@ -1,13 +1,10 @@
 import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import Button from '../components/Button';
 
 export default function SearchCameraScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>カメラマン</Text>
-      <View style={styles.separator} />
-      <Button text="検索" />
     </View>
   );
 }
@@ -22,10 +19,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
 });

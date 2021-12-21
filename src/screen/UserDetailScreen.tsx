@@ -12,7 +12,7 @@ import Picture from '../components/Picture';
 
 const WIDTH = Dimensions.get('window').width;
 
-export default function MypageScreen() {
+export default function UserDetailScreen(userId: number) {
   const picturePathList = [
     {path: require('../../assets/images/90_main.jpeg')},
     {
@@ -40,7 +40,9 @@ export default function MypageScreen() {
             rounded
             size={100}
             title="TT"
-            source={require('../../assets/images/2018092810504201.jpeg')}
+            source={{
+              uri: '../../assets/images/Eawok9YU0AIt-fv.jpeg',
+            }}
           />
 
           <View style={styles.nameWrap}>
@@ -88,7 +90,7 @@ const styles = StyleSheet.create({
   },
   nameWrap: {
     flexDirection: 'column',
-    marginLeft: 15,
+    marginLeft: 10,
   },
   name: {
     fontSize: 20,
