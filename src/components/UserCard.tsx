@@ -9,7 +9,7 @@ type UserDetailScreenProp = StackNavigationProp<
   'UserDetail'
 >;
 
-export default function User({user}: {user: any}) {
+export default function UserCard({user}: {user: any}) {
   const navigation = useNavigation<UserDetailScreenProp>();
   return (
     <Card onPress={() => navigation.navigate('UserDetail', user.id)}>

@@ -7,9 +7,12 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import HomeScreen from '../screen/HomeScreen';
 import SearchScreen from '../screen/SearchScreen';
-import MessageScreen from '../screen/MessageScreen';
+import MessageRoomListScreen from '../screen/MessageRoomListScreen';
 import MypageScreen from '../screen/MypageScreen';
 import UserDetailScreen from '../screen/UserDetailScreen';
+import PhotomoListScreen from '../screen/PhotomoListScreen';
+import FavoriteListScreen from '../screen/FavoriteListScreen';
+import MessageRoomDetailScreen from '../screen/MessageRoomDetailScreen';
 
 export default function Navigation() {
   return (
@@ -32,6 +35,21 @@ function RootNavigator() {
       <Stack.Screen
         name="UserDetail"
         component={UserDetailScreen}
+        options={{headerTitle: ' '}}
+      />
+      <Stack.Screen
+        name="PhotomoList"
+        component={PhotomoListScreen}
+        options={{headerTitle: ' '}}
+      />
+      <Stack.Screen
+        name="FavoriteList"
+        component={FavoriteListScreen}
+        options={{headerTitle: ' '}}
+      />
+      <Stack.Screen
+        name="MessageRoomDetail"
+        component={MessageRoomDetailScreen}
         options={{headerTitle: ' '}}
       />
       <Stack.Group screenOptions={{presentation: 'modal'}}>
@@ -64,7 +82,7 @@ const BottomTabNavigator: React.VFC = () => (
     />
     <Tab.Screen
       name="  "
-      component={MessageScreen}
+      component={MessageRoomListScreen}
       options={{
         headerTitle: 'メッセージ',
         tabBarIcon: ({color}) => <TabBarIcon name="envelope" color={color} />,

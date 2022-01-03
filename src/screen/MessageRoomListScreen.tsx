@@ -1,26 +1,30 @@
 import * as React from 'react';
 import {StyleSheet, View, FlatList, Dimensions} from 'react-native';
-import Message from '../components/Message';
+import MessageRoom from '../components/MessageRoom';
 
 const ITEM_WIDTH = Dimensions.get('window').width;
 
-export default function Messagecreen() {
+export default function MessageRoomListScreen() {
   const messageList = [
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
-    {path: ''},
+    {id: '1'},
+    {id: '2'},
+    {id: '3'},
+    {id: '4'},
+    {id: '5'},
+    {id: '6'},
+    {id: '7'},
+    {id: '8'},
+    {id: '9'},
   ];
+
+  const renderItem = ({item}: {item: any}) => <MessageRoom roomId={item.id} />;
+
   return (
     <View style={styles.messageWrap}>
       <FlatList
         data={messageList}
-        renderItem={() => <Message />}
+        renderItem={renderItem}
+        keyExtractor={messageList => messageList.id}
         // Performance settings
         removeClippedSubviews={true} // Unmount components when outside of window
         initialNumToRender={2} // Reduce initial render amount

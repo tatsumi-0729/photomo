@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, Dimensions, ScrollView, View} from 'react-native';
-import User from '../components/User';
+import UserCard from '../components/UserCard';
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -11,7 +11,7 @@ export default function SearchModelScreen({userList}: {userList: any}) {
         <View style={styles.pictureWrap}>
           {userList.map((user: any) => (
             <View style={styles.picture}>
-              <User user={user} />
+              <UserCard user={user} />
             </View>
           ))}
         </View>
