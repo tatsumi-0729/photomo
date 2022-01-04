@@ -1,5 +1,12 @@
 import * as React from 'react';
-import {StyleSheet, Text, TextInput, View, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import {Avatar} from 'react-native-elements';
 import Picture from '../components/Picture';
 import {useNavigation} from '@react-navigation/native';
@@ -62,25 +69,23 @@ export default function UserProfile({props}: {props: UserProfileParams}) {
           {/* フォトモ */}
           <View style={styles.photomoWrap}>
             <Text style={styles.photomo}>フォトモ：</Text>
-            <Text
-              style={styles.photomoCount}
+            <TouchableOpacity
               onPress={() =>
                 PhotomoListScreenNavigation.navigate('PhotomoList', userId)
               }>
-              192
-            </Text>
+              <Text style={styles.photomoCount}>192</Text>
+            </TouchableOpacity>
           </View>
           {/* お気に入り */}
           {isMe && (
             <View style={styles.favoriteWrap}>
               <Text style={styles.favorite}>気になる：</Text>
-              <Text
-                style={styles.favoriteCount}
+              <TouchableOpacity
                 onPress={() =>
                   FavoriteListScreenNavigation.navigate('FavoriteList', userId)
                 }>
-                59
-              </Text>
+                <Text style={styles.favoriteCount}>59</Text>
+              </TouchableOpacity>
             </View>
           )}
         </View>

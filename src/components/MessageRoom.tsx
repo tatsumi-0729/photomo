@@ -4,7 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 import {Avatar} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
@@ -23,7 +23,7 @@ export default function MessageRoom({roomId}: {roomId: any}) {
   const MessageRoomDetailScreenNavigation =
     useNavigation<MessageRoomDetailProp>();
   return (
-    <TouchableOpacity
+    <TouchableHighlight
       onPress={() =>
         MessageRoomDetailScreenNavigation.navigate('MessageRoomDetail', roomId)
       }>
@@ -44,7 +44,7 @@ export default function MessageRoom({roomId}: {roomId: any}) {
           </Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 }
 
